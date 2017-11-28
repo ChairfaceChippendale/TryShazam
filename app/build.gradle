@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply from: "dependencies.gradle"
+
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.ujujzk.tryshazam"
+        minSdkVersion 19
+        targetSdkVersion 26
+
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildTypes {
+            release {
+                minifyEnabled true
+                shrinkResources true
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            }
+        }
+
+        flavorDimensions "default"
+
+        productFlavors {
+            dev {
+                dimension "default"
+                applicationIdSuffix '.dev'
+                versionNameSuffix "-dev"
+                resValue "string", "app_name", "TryShazam Dev"
+
+                resConfigs "en", "xxhdpi"
+            }
+
+            mock {
+                dimension "default"
+                applicationIdSuffix '.mock'
+                versionNameSuffix "-mock"
+                resValue "string", "app_name", "TryShazam Mock"
+            }
+
+            prod {
+                dimension "default"
+                resValue "string", "app_name", "TryShazam"
+            }
+        }
+    }
+}
+
+repositories {
+    maven { url "https://jitpack.io" }
+    mavenCentral()
+}
