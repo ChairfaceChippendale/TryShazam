@@ -48,6 +48,10 @@ android {
                 resValue "string", "app_name", "TryShazam"
             }
         }
+
+        defaultConfig {
+            vectorDrawables.useSupportLibrary = true
+        }
     }
 }
 

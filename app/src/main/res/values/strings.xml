@@ -1,3 +1,12 @@
 <resources>
 
+
+    <!-- Discover Page Start -->
+    <string name="discoverActionDonateContentDesc">Donate</string>
+    <string name="discoverActionHistoryContentDesc">History</string>
+    <string name="discoverActionStartIdentifyContentDesc">Start identifying music</string>
+    <string name="discoverActionStopIdentifyContentDesc">Stop identifying music</string>
+    <string name="discoverStatusTapToIdentify">Tap to identify</string>
+    <!-- Discover Page End -->
+
 </resources>

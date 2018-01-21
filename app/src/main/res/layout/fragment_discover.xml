@@ -1,17 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/discover_fragment_view"
+    android:id="@+id/discoverFragmentView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
     tools:context="com.ujujzk.tryshazam.discover.DiscoverFragment">
 
-    <TextView
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/discoverIdentifyProgressView"
+        style="@style/SpinKitView.Large.MultiplePulse"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello"/>
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-</FrameLayout>
+    <ImageButton
+        android:id="@+id/discoverStartIdentifyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_circle_white"
+        android:contentDescription="@string/discoverActionStartIdentifyContentDesc"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_mic_gray_24dp" />
+
+    <ImageButton
+        android:id="@+id/discoverStopIdentifyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_circle_white"
+        android:contentDescription="@string/discoverActionStopIdentifyContentDesc"
+        android:padding="12dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_mic_gray_24dp" />
+
+
+    <TextView
+        android:id="@+id/discoverProgressStatusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/discoverStatusTapToIdentify"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/primary_text_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <ImageButton
+        android:id="@+id/discoverDonateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@string/discoverActionDonateContentDesc"
+        android:padding="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_favorite_white_24dp" />
+
+
+    <ImageButton
+        android:id="@+id/discoverHistoryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@string/discoverActionHistoryContentDesc"
+        android:padding="8dp"
+        app:layout_constraintRight_toLeftOf="@id/discoverDonateButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_history_white_24dp" />
+
+</android.support.constraint.ConstraintLayout>
 
